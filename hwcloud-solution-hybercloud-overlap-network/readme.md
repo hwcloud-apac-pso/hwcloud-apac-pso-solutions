@@ -14,7 +14,7 @@
 
 主要的模拟架构图如下：
 
-![arch](.\images\arch.png)
+![arch](./images/arch.png)
 
 ### 
 
@@ -26,17 +26,17 @@
 
 主要配置表如下：
 
-![vpc](.\images\vpc.png)
+![vpc](./images/vpc.png)
 
 主要的路由表如下：
 
-![rtb](.\images\rtb.png)
+![rtb](./images/rtb.png)
 
 #### 2.2 配置Site To Site VPN
 
 在配置我们模拟的环境时，可以先填写一个假的对端VPN Server的Public IP，配置后对端后，再回到源端更新对端的Public IP
 
-![vpn](.\images\vpn.png)
+![vpn](./images/vpn.png)
 
 
 
@@ -46,8 +46,8 @@
 
 在线下172.16.0.50 访问到云上172.31.0.50的验证
 
-![onprem-test](.\images\onprem-test.png)
+![onprem-test](./images/onprem-test.png)
 
 从云上172.16.0.50访问到线下172.30.0.50的验证
 
-![cloud-test](.\images\cloud-test.png)
+![cloud-test](./images/cloud-test.png)
