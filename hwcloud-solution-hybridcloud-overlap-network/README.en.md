@@ -2,7 +2,7 @@
 
 [![ch](https://img.shields.io/badge/lang-ch-red)](https://github.com/terraform-hwcloud-apac-pso-modules/hwcloud-apac-pso-solutions/blob/master/hwcloud-solution-hybridcloud-overlap-network/readme.md)
 
-#### Scenario:
+#### 1. Scenario:
 
 This solution are not able to achieve a direct connection between 172.18.0.50 and 172.18.0.49 in terms of Layer 2 communication. Instead, the connection is made via the use of transit address where both sides need to be connected by their own DNAT mapping. Suppose the scenario is as below:
 On-prem: 172.18.0.50
@@ -15,7 +15,7 @@ The access from cloud (172.18.0.49) to on-prem (172.18.0.50) is achieved via the
 
 Through the above implementation, the communication between two overlapping network segments can be achieved.
 
-### 1. Solution Overview
+### 2. Solution Overview
 
 The main usage is to enable communication in between on-premises data center with Huawei Cloud VPC that have the same network segment. Based on the architecture diagram as shown below, we’re going to use transit network to establish a site-to-site VPN connection which indirectly allow the same network segments in on-premises data center and Huawei Cloud VPC to communicate with each other. The connection is implemented under the same account with two different regions, Bangkok and Hong Kong.
 
@@ -28,11 +28,11 @@ Please refer to below diagram as a solution overview in this walkthrough.
 
 ### 
 
-### 2. Main Configuration Parameter
+### 3. Main Configuration Parameter
 
 Due to the limitation of Terraform which not support the configuration of certain resources such as site-to-site VPN and Private NAT Gateway, currently we’re not able to automate the whole process of resource provisioning. Thus, please manually configure and setup the environment by using console.
 
-#### 2.1 VPC, Subnet, VPC Peering and NAT Gateway configuration
+#### 3.1 VPC, Subnet, VPC Peering and NAT Gateway configuration
 
 Main Configuration：
 
@@ -42,7 +42,7 @@ Route table：
 
 ![rtb](./images/rtb.png)
 
-#### 2.2 Site-to-Site VPN configuration
+#### 3.2 Site-to-Site VPN configuration
 
 During the configuration of site-to-site VPN, there is a need to fill in the remote gateway IP address. In the case where remote VPN is pending setup and configure, you may insert a dummy remote gateway and modify once the peer VPN is established. 
 
@@ -50,7 +50,7 @@ During the configuration of site-to-site VPN, there is a need to fill in the rem
 
 
 
-#### 2.3 Connection Test
+#### 3.3 Connection Test
 
 Provision the ECS resources in four newly created VPC for testing purposes. It is recommended to use console for remote login. Ensure that your ECS’s security group have an inbound rule that enable the ECS to receive ICMP packets before moving on to connection test.
 
