@@ -1,5 +1,9 @@
 # 华为混合云网络重叠的解决方案
 
+[![ch](https://img.shields.io/badge/lang-en-red)](https://github.com/terraform-hwcloud-apac-pso-modules/hwcloud-apac-pso-solutions/blob/master/hwcloud-solution-hybridcloud-overlap-network/README.en.md)
+
+
+
 限制说明：
 
 这个方案，实现的是172.18.0.50和172.18.0.49不是真正二层意义上的联通。而是通过代理地址进行的连接。需要两边通过自己的DNAT映射方式进行连接。假设场景如下：
