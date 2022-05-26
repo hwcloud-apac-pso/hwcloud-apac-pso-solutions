@@ -4,9 +4,7 @@
 
 #### 1. Scenario
 
-This solution are not able to achieve a direct connection between 172.18.0.50 and 172.18.0.49 in terms of Layer 2 communication. Instead, the connection is made via the use of transit address where both sides need to be connected by their own DNAT mapping. Suppose the scenario is as below:
-On-prem: 172.18.0.50
-Cloud: 172.18.0.49
+This solution are not able to achieve a direct connection between 172.18.0.50（on-premises) and 172.18.0.49 (cloud) in terms of Layer 2 communication. Instead, the connection is made via the use of transit address where both sides need to be connected by their own DNAT mapping. 
 
 The logical access of connection:
 The access from on-prem (172.18.0.50) to cloud (172.18.0.49) is achieved via the DNAT mapping of transit address which is from 172.18.0.50 --> 172.31.0.50
