@@ -4,19 +4,16 @@
 
 #### Limitation:
 
-This scheme, implemented as 172.18.0.50 and 172.18.0.49 is not a connection in the true Layer 2 sense. Rather, it is a connection through a proxy address. Both sides need to be connected through their own DNAT mapping method. The hypothetical scenario is as follows.
+This solution are not able to achieve a direct connection between 172.18.0.50 and 172.18.0.49 in terms of Layer 2 communication. Instead, the connection is made via the use of transit address where both sides need to be connected by their own DNAT mapping. Suppose the scenario is as below:
+On-prem: 172.18.0.50
+Cloud: 172.18.0.49
 
-On-prem is: 172.18.0.50
+The logical access of connection:
+The access from on-prem (172.18.0.50) to cloud (172.18.0.49) is achieved via the DNAT mapping of transit address which is from 172.18.0.50 --> 172.31.0.50
 
-Cloud is: 172.18.0.49
+The access from cloud (172.18.0.49) to on-prem (172.18.0.50) is achieved via the DNAT mapping of transit address which is from 172.18.0.49 --> 172.30.0.50
 
-So the access logic implemented is:
-
-on-prem 172.18.0.50 --> cloud 172.18.0.49 is actually achieved by accessing 172.18.0.50 --> 172.31.0.50.
-
-cloud 172.18.0.49 --> on-prem 172.18.0.50 is actually implemented with access to 172.18.0.49 --> 172.30.0.50.
-
-The two overlapping network segments are inter-accessed by the above way.
+Through the above implementation, the communication between two overlapping network segments can be achieved.
 
 ### 1. Solution Overview
 
