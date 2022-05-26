@@ -9,7 +9,7 @@ This solution are not able to achieve a direct connection between 172.18.0.50（
 The logical access of connection:
 The access from on-prem (172.18.0.50) to cloud (172.18.0.49) is achieved via the DNAT mapping of transit address which is from 172.18.0.50 --> 172.31.0.50
 
-The access from cloud (172.18.0.49) to on-prem (172.18.0.50) is achieved via the DNAT mapping of transit address which is from 172.18.0.49 --> 172.30.0.50
+The logical access from cloud (172.18.0.49) to on-prem (172.18.0.50) is achieved via the DNAT mapping of transit address which is from 172.18.0.49 --> 172.30.0.50
 
 Through the above implementation, the communication between two overlapping network segments can be achieved.
 
