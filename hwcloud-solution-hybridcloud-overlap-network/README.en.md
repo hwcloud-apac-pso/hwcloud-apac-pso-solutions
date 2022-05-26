@@ -2,7 +2,21 @@
 
 [![ch](https://img.shields.io/badge/lang-ch-red)](https://github.com/terraform-hwcloud-apac-pso-modules/hwcloud-apac-pso-solutions/blob/master/hwcloud-solution-hybridcloud-overlap-network/readme.md)
 
+#### Limitation:
 
+This scheme, implemented as 172.18.0.50 and 172.18.0.49 is not a connection in the true Layer 2 sense. Rather, it is a connection through a proxy address. Both sides need to be connected through their own DNAT mapping method. The hypothetical scenario is as follows.
+
+On-prem is: 172.18.0.50
+
+Cloud is: 172.18.0.49
+
+So the access logic implemented is:
+
+on-prem 172.18.0.50 --> cloud 172.18.0.49 is actually achieved by accessing 172.18.0.50 --> 172.31.0.50.
+
+cloud 172.18.0.49 --> on-prem 172.18.0.50 is actually implemented with access to 172.18.0.49 --> 172.30.0.50.
+
+The two overlapping network segments are inter-accessed by the above way.
 
 ### 1. Solution Overview
 
