@@ -4,7 +4,7 @@
 
 
 
-### 1：Solution Overview
+### 1. Solution Overview
 
 The main usage is to enable communication in between on-premises data center with Huawei Cloud VPC that have the same network segment. Based on the architecture diagram as shown below, we’re going to use transit network to establish a site-to-site VPN connection which indirectly allow the same network segments in on-premises data center and Huawei Cloud VPC to communicate with each other. The connection is implemented under the same account with two different regions, Bangkok and Hong Kong.
 
@@ -17,7 +17,7 @@ Please refer to below diagram as a solution overview in this walkthrough.
 
 ### 
 
-### 2: Main Configuration Parameter
+### 2. Main Configuration Parameter
 
 Due to the limitation of Terraform which not support the configuration of certain resources such as site-to-site VPN and Private NAT Gateway, currently we’re not able to automate the whole process of resource provisioning. Thus, please manually configure and setup the environment by using console.
 
